@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{pgfplots, pgfplotstable}
+\usepgfplotslibrary{statistics, groupplots}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+	width = 3in,
+	height = 3in,
+	bar width = 0.9,
+	clip mode = individual,
+	xmin = 1, xmax=65,
+	ymin = 1, ymax=65,
+  ]
+  \addplot+[only marks] table[x=X, y=Y] {/home/jedediah/Dropbox/Research/DataFiles/Temp1.dat};
+  \addplot[very thick,red] table[x = P1x, y=P1y] {/home/jedediah/Dropbox/Research/DataFiles/Temp2.dat};
+  \addplot[very thick,red] table[x = P2x, y=P2y] {/home/jedediah/Dropbox/Research/DataFiles/Temp2.dat};
+  \end{axis}
+\end{tikzpicture}
+\end{document}

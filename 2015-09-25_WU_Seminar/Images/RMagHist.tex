@@ -1,0 +1,25 @@
+\documentclass{standalone}
+\usepackage{pgfplots, pgfplotstable}
+\usepgfplotslibrary{statistics, groupplots}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+	width = 3in,
+	height = 3in,
+	bar width = 0.9,
+	xlabel = R Magnitude,
+	ylabel = Impact Count,
+	ytick = {0,10,20,30,40,50,60},
+	xtick = {4,5,6,7,8,9,10,11},
+	legend pos = north west,
+	legend style = {font = \scriptsize},
+  ]
+  \addplot+[ybar,fill=blue, no marks, area legend] table[x=Mag, y=Count] {/home/jedediah/Dropbox/Research/DataFiles/RMagHistogram.dat};
+  \addlegendentry{Impacts per bin}
+  \addplot+[] table[x expr = \thisrow{Mag}+0.5, y=SumCount] {/home/jedediah/Dropbox/Research/DataFiles/RMagHistogram.dat};
+  \addlegendentry{Cumulative impacts}
+  \end{axis}
+\end{tikzpicture}
+\end{document}

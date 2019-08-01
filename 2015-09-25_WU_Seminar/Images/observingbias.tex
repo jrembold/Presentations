@@ -1,0 +1,26 @@
+\documentclass[12pt]{standalone}
+\usepackage{pgfplots,pgfplotstable}
+\usepgfplotslibrary{statistics, groupplots}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+	width = 4.5in,
+	height = 4.5in,
+	axis on top,
+	scale only axis,
+	enlargelimits = false,
+	y dir = reverse,
+	ticks = none,
+	colorbar,
+	colormap/hot2,
+	colorbar style ={
+	  ylabel = Observation Hours},
+  ]
+  \addplot[opacity=1] graphics[xmin=0, xmax=1, ymin=0, ymax=1] {/home/jedediah/Dropbox/Research/Images/Lunar_Maps/LRO_Moon_nocredit.png};
+  \addplot[opacity=0.4, point meta min = 0, point meta max = 68] graphics[xmin=0, xmax=1, ymin=0, ymax=1] {/home/jedediah/Dropbox/Research/Images/TestMap.png}; %Image generated from sc_LunarSurfaceMapping
+  \end{axis}
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{pgfplots,pgfplotstable}
+\usepgfplotslibrary{statistics, groupplots}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+\definecolor{g1}{rgb}{0.553,0.827,0.780}
+\definecolor{m1}{rgb}{0.745,0.729,0.855}
+\definecolor{y1}{rgb}{1.000,1.000,0.702}
+\begin{tikzpicture}
+	\begin{axis}[
+		width = 5.5in,
+		height = 5.5in,
+		axis on top,
+		scale only axis,
+		enlargelimits = false,
+		y dir = reverse,
+		ticks = none,
+		cycle list = {{purple, mark=diamond, very thick, mark size=3pt},{orange, mark=*, draw=white, mark size=3pt},},
+		legend style = {draw=black, fill=white, fill opacity = 1, text opacity=1, draw opacity=1, anchor=north, at={(axis description cs:0.5,-0.05)}},
+		%legend columns = 2,
+		legend cell align=left,
+		%transpose legend,
+		%legend entries = { Rejected Lunar Impacts, Accepted Lunar Impacts},
+	  ]
+	  \addplot [forget plot] graphics [xmin=1, xmax=1400, ymin=1, ymax=1400] {/home/jedediah/Dropbox/Research/Images/Lunar_Maps/LRO_Moon_nocredit.png};
+	  \addplot+[only marks] table {/home/jedediah/Dropbox/Research/DataFiles/LunarLocations-BadImps.dat};
+	  \addplot+[only marks] table {/home/jedediah/Dropbox/Research/DataFiles/LunarLocations-GoodImps.dat};
+	\end{axis}
+  \end{tikzpicture}
+\end{document}

@@ -1,0 +1,30 @@
+\documentclass[tikz]{standalone}
+\usetikzlibrary{calc}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.4, transform shape]
+  %\fill[black!80] (0,-3) rectangle (10,3);
+  %\draw[help lines] (0,-3) grid (10,3);
+  \coordinate (sun) at (1,0);
+  \coordinate (sunt) at ($ (sun)+(0,1) $);
+  \coordinate (sunb) at ($ (sun)-(0,1) $);
+  \coordinate (earth) at (7,0);
+  \coordinate (eartht)  at ($ (earth)+(0,.5) $);
+  \coordinate (earthb)  at ($ (earth)-(0,.5) $);
+
+  \fill[yellow!50!orange, opacity=0.5] (sunt) -- (eartht) -- (earthb) -- (sunb) --cycle;
+  \fill[yellow!50!orange, opacity=0.5] (sunt) -- (earthb) -- (eartht) -- (sunb) --cycle;
+  %\fill[black!50] (8,-.9) -- ++(0,1.7) -- ++(1.5,.5) -- ++(0,-2.5) -- cycle;
+  \shade[inner color=yellow, outer color=orange] (1,0) circle (1cm);
+  \node at (earth) {\includegraphics[width=1cm]{world.png}};
+  \draw (sunb) +(14:8) coordinate (pernumbrat);
+  \draw (sunt) +(-14:8) coordinate (pernumbrab);
+  \draw (sunb) +(4.76:7.75) coordinate (umbrab);
+  \draw (sunt) +(-4.76:7.75) coordinate (umbrat);
+  \fill[black!60] let \p1=(pernumbrat) in (\x1,0) ellipse (5mm and \y1);
+  \fill[black!70] let \p1=(umbrat) in (\x1,0) ellipse (2mm and \y1);
+  \node[anchor=north, xshift=-1mm] at (umbrat) {\includegraphics[width=0.5cm]{ch2_moon_small2.png}};
+  \fill[black!95, opacity=0.5] (eartht) -- (pernumbrat) to[out=0, in=0, looseness=.9] (pernumbrab) -- (earthb) -- cycle;
+  \fill[black!95, opacity=0.5] (eartht) -- (umbrat) to[out=0, in=0] (umbrab) -- (earthb) -- cycle;
+\end{tikzpicture}
+\end{document}
