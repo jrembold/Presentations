@@ -1,0 +1,180 @@
+\documentclass[pdf, aspectratio=169]{beamer}
+\usepackage[]{hyperref, graphicx, siunitx, lmodern, tikz, booktabs, physics}
+\usepackage[mode=buildnew]{standalone}
+\usepackage{pdfpc-commands}
+\usepackage{intro-commands}
+\pgfplotsset{compat=1.16}
+
+\usetheme{astro}
+\graphicspath{ {Images/} }
+
+\sisetup{per-mode=symbol}
+\usetikzlibrary{calc, patterns, decorations.markings, decorations.pathmorphing, shapes}
+
+%Preamble
+\title{A Tour and Guide to Salem's Night Skies}
+\author{Jed Rembold}
+\date{August 3, 2019}
+
+\begin{document}
+\renewcommand{\theenumi}{\Alph{enumi}}
+
+{
+	\setbeamertemplate{footline}{}
+	\maketitle
+}
+
+\begin{frame}{Overview}
+	\begin{itemize}
+		\item The Moon
+			\begin{itemize}
+				\item Tycho
+				\item Copernicus
+				\item Sea of Tranquility
+			\end{itemize}
+		\item Planets
+			\begin{itemize}
+				\item Jupiter and moons
+				\item Saturn
+				\item Venus and Mars
+			\end{itemize}
+		\item Deep Sky
+			\begin{itemize}
+				\item Pleides
+				\item Orion Nebula
+				\item Andromeda Galaxy
+				\item Hercules Cluster
+			\end{itemize}
+		\item Perseid Meteor Shower
+	\end{itemize}
+\end{frame}
+
+\section{The Moon}
+
+\begin{frame}{The Moon}
+	\begin{itemize}
+		\item Where to find:
+			\begin{itemize}
+				\item Full: highest in sky around midnight
+				\item New: highest in sky at noon
+				\item Waxing: up in early evening
+				\item Waning: up in early morning
+			\end{itemize}
+		\item Always see basically the same side of the Moon
+			\begin{itemize}
+				\item Rotates on axis at same rate it rotates around Earth
+			\end{itemize}
+		\item Near-side has lots of contrast with darker lowlands and brighter highlands
+		\item Looking along the \alert{terminator} where light meets dark, will give the greatest sense of depth and contrast from shadows.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Tycho}
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{itemize}
+			\item Named after Tycho Brahe
+			\item Bright crater in Southern hemisphere
+			\item Characterized by many long rays emanating outwards
+			\item Fairly young by crater standards
+		\end{itemize}
+		\column{0.6\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\node<1-2> {\includegraphics[width=0.8\textwidth]{FullMoon_Barrett.jpg}};
+				\draw<2>[very thick, red] (-.5,-1.9) circle (4mm);
+				\node<3> {\includegraphics[width=0.9\textwidth]{Tycho_Full_Barrett.jpg}};
+			\end{tikzpicture}
+		\end{center}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Copernicus}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\node<1-2> {\includegraphics[width=0.9\textwidth]{FullMoon_Barrett.jpg}};
+				\draw<2>[very thick, red] (-.9,.5) circle (4mm);
+			\end{tikzpicture}
+		\end{center}
+		
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Named after Nicolaus Copernicus
+			\item Large crater to West and in center of many darker seas
+			\item Also has rays but they are more wandering
+		\end{itemize}
+		
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Sea of Tranquility}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Lower of the two seas to the East
+			\item Lowlands expose darker rock, giving the distinct shade
+			\item Apollo 11 landing was near the Southwest edge
+		\end{itemize}
+		\column{0.5\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\node<1-3> {\includegraphics[width=0.9\textwidth]{FullMoon_Barrett.jpg}};
+				\draw<2>[very thick, red] (1.2,0.2) circle (8mm);
+				\draw<3>[very thick, orange] (1.1,-0.1) circle (2mm);
+			\end{tikzpicture}
+		\end{center}
+	\end{columns}
+\end{frame}
+
+\section{The Planets}
+
+\begin{frame}{Jupiter}
+	\begin{columns}
+		\column{0.55\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\node<1> {\includegraphics[width=\textwidth]{JupiterPosition.png}};
+				\node<2> {\includegraphics[width=\textwidth]{JupiterMoons.jpg}};
+			\end{tikzpicture}
+		\end{center}
+		
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Largest of the planets. Will appear as a very large bright star in the sky.
+			\item Look towards the South between 15 and 30 degrees above the horizon.
+			\item If you see two really bright stars, Jupiter is the brighter and is the rightmost one at the moment.
+			\item 4 moons easily visible with just binoculars
+				\begin{itemize}
+					\item Io, Europa, Ganymede and Callisto
+					\item Sometimes 1 or 2 may be in front or behind the planet
+				\end{itemize}
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Saturn}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Also appears as a bright star in the sky.
+			\item Currently near Jupiter but is the more leftmost bright point.
+			\item Will just appear oblong in binoculars, really need a \alert{small telescope} to see the rings.
+			\item Can sometimes see its largest moon Titan nearby.
+		\end{itemize}
+		\column{0.5\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\node<1> {\includegraphics[width=\textwidth]{SaturnPosition.png}};
+				\node<2> {\includegraphics[width=\textwidth]{Saturn-through-binoculars.jpg}};
+			\end{tikzpicture}
+		\end{center}
+		
+	\end{columns}
+\end{frame}
+
+
+
+\end{document}
+
