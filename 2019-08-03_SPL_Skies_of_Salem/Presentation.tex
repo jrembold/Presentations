@@ -174,6 +174,97 @@
 	\end{columns}
 \end{frame}
 
+\begin{frame}{Venus and Mars}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\node<1> {\includegraphics[width=.5\textwidth]{VenusPhases.jpg}};
+				\node<2> {\includegraphics[width=\textwidth]{mars-opposition.png}};
+			\end{tikzpicture}
+		\end{center}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item<1-> Venus
+				\begin{itemize}
+					\item Brightest planet besides Jupiter
+					\item Will always be hanging out near the Sun, so visible only in early evening or morning
+						\begin{itemize}
+							\item Currently so close to the Sun as to be invisible
+						\end{itemize}
+					\item Goes through visible phases and size changes
+				\end{itemize}
+			\item<2-> Mars
+				\begin{itemize}
+					\item Exhibits a reddish tinge
+					\item Lies on the same elciptic, so visible to mostly looking South
+					\item With telescope can sometimes make out polar caps
+				\end{itemize}
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+\section{Deep Sky}
+
+\begin{frame}{Andromeda Galaxy}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Our nearest galactic neighbor!
+			\item Definitely easier to spot away from light pollution
+			\item I usually find follow a trail of constellations to help me find it:
+				\begin{itemize}
+					\item Cassiopeia (the ``W'')
+					\item Pegasus (a big square)
+					\item Andromeda (two ``legs'' attached to the square)
+				\end{itemize}
+			\item Will appear an oblong fuzzy blob with naked eyes, much more detail visible with binoculars
+		\end{itemize}
+		
+		\column{0.5\textwidth}
+		\begin{center}
+			\vspace{-5mm}
+			\begin{tikzpicture}[
+				star/.style={circle, minimum size=1mm, inner sep=0pt,}
+				]
+				\node {\includegraphics[width=\textwidth]{Cass_n_Peg.png}};
+				\node[star] (c1) at (-2.82,1.15) {};
+				\node[star] (c2) at ($(c1)+(.5,.12)$) {};
+				\node[star] (c3) at ($(c2)+(.11,.37)$) {};
+				\node[star] (c4) at ($(c3)+(.48,.06)$) {};
+				\node[star] (c5) at ($(c4)+(-.14,.48)$) {};
+
+				\node[star] (p1) at (1.18,1.37) {};
+				\node[star] (p2) at ($(p1)+(.43,1.47)$) {};
+				\node[star] (p3) at ($(p2)+(1.43,-.26)$) {};
+				\node[star] (p4) at ($(p3)+(-.48,-1.78)$) {};
+
+				\node[star] (a1) at ($(p1)+(-.41,-.59)$) {};
+				\node[star] (a2) at ($(a1)+(-.71,-.4)$) {};
+				\node[star] (a3) at ($(a2)+(-1.14,-.6)$) {};
+				\node[star] (a4) at ($(p1)+(-.66,-.44)$) {};
+				\node[star] (a5) at ($(a4)+(-.62,-.20)$) {};
+				\node[star] (a6) at ($(a5)+(-1.5,-.20)$) {};
+
+				\draw<2->[red, thick] (c1) -- (c2) -- (c3) -- (c4) -- (c5);
+				\draw<3->[orange, thick] (p1) -- (p2) -- (p3) -- (p4) -- (p1);
+				\draw<4->[cyan,thick] (p1) -- (a1) -- (a2) -- (a3) (p1) -- (a4) -- (a5) -- (a6);
+				\draw<5->[green,-latex, thick] (a2) -- ($(a2)!1.9!(a5)$);
+			\end{tikzpicture}
+		\end{center}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Andromeda thru Binoculars}
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{AndromedaGalaxy.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Orion Nebula}
+	Slide Body
+\end{frame}
+
 
 
 \end{document}
