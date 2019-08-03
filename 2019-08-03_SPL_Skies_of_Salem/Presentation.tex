@@ -1,11 +1,11 @@
-\documentclass[pdf, aspectratio=169]{beamer}
+\documentclass[pdf, ]{beamer}
 \usepackage[]{hyperref, graphicx, siunitx, lmodern, tikz, booktabs, physics}
 \usepackage[mode=buildnew]{standalone}
 \usepackage{pdfpc-commands}
 \usepackage{intro-commands}
 \pgfplotsset{compat=1.16}
 
-\usetheme{astro}
+\usetheme{Astro}
 \graphicspath{ {Images/} }
 
 \sisetup{per-mode=symbol}
@@ -80,7 +80,7 @@
 		\end{itemize}
 		\column{0.6\textwidth}
 		\begin{center}
-			\begin{tikzpicture}
+			\begin{tikzpicture}[scale=0.78]
 				\node<1-2> {\includegraphics[width=0.8\textwidth]{FullMoon_Barrett.jpg}};
 				\draw<2>[very thick, red] (-.5,-1.9) circle (4mm);
 				\node<3> {\includegraphics[width=0.9\textwidth]{Tycho_Full_Barrett.jpg}};
@@ -93,7 +93,7 @@
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{center}
-			\begin{tikzpicture}
+			\begin{tikzpicture}[scale=0.78]
 				\node<1-2> {\includegraphics[width=0.9\textwidth]{FullMoon_Barrett.jpg}};
 				\draw<2>[very thick, red] (-.9,.5) circle (4mm);
 			\end{tikzpicture}
@@ -119,7 +119,7 @@
 		\end{itemize}
 		\column{0.5\textwidth}
 		\begin{center}
-			\begin{tikzpicture}
+			\begin{tikzpicture}[scale=0.78]
 				\node<1-3> {\includegraphics[width=0.9\textwidth]{FullMoon_Barrett.jpg}};
 				\draw<2>[very thick, red] (1.2,0.2) circle (8mm);
 				\draw<3>[very thick, orange] (1.1,-0.1) circle (2mm);
@@ -176,14 +176,14 @@
 
 \begin{frame}{Venus and Mars}
 	\begin{columns}
-		\column{0.5\textwidth}
+		\column{0.4\textwidth}
 		\begin{center}
 			\begin{tikzpicture}
-				\node<1> {\includegraphics[width=.5\textwidth]{VenusPhases.jpg}};
+				\node<1> {\includegraphics[width=.9\textwidth]{VenusPhases.jpg}};
 				\node<2> {\includegraphics[width=\textwidth]{mars-opposition.png}};
 			\end{tikzpicture}
 		\end{center}
-		\column{0.5\textwidth}
+		\column{0.6\textwidth}
 		\begin{itemize}
 			\item<1-> Venus
 				\begin{itemize}
@@ -212,7 +212,7 @@
 		\begin{itemize}
 			\item Our nearest galactic neighbor!
 			\item Definitely easier to spot away from light pollution
-			\item I usually find follow a trail of constellations to help me find it:
+			\item Follow a trail of constellations to help find it:
 				\begin{itemize}
 					\item Cassiopeia (the ``W'')
 					\item Pegasus (a big square)
@@ -225,7 +225,8 @@
 		\begin{center}
 			\vspace{-5mm}
 			\begin{tikzpicture}[
-				star/.style={circle, minimum size=1mm, inner sep=0pt,}
+				star/.style={circle, minimum size=1mm, inner sep=0pt,},
+				scale=0.78
 				]
 				\node {\includegraphics[width=\textwidth]{Cass_n_Peg.png}};
 				\node[star] (c1) at (-2.82,1.15) {};
@@ -262,7 +263,44 @@
 \end{frame}
 
 \begin{frame}{Orion Nebula}
-	Slide Body
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Brightest nebula to look at in the Northern hemisphere
+			\item Resides in the ``dagger'' on Orion's belt
+			\item Orion currently rises just before the Sun, but will be up earlier and earlier as we move toward winter.
+		\end{itemize}
+		\column{0.5\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\node<1> {\includegraphics[width=\textwidth]{orion_constellation.jpg}};
+				\node<2> {\includegraphics[width=\textwidth]{OrionNebula_Binocs.jpg}};
+			\end{tikzpicture}
+		\end{center}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{The Pleides: An Open Star Cluster}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{center}
+			\vspace{-8mm}
+			\begin{tikzpicture}
+				\node<1> {\includegraphics[width=\textwidth]{FindingPleides.png}};
+				\node<2> {\includegraphics[width=\textwidth]{Pleides.jpg}};
+			\end{tikzpicture}
+		\end{center}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Located in the constellation Taurus
+				\begin{itemize}
+					\item Can find by following the line of Orion's belt
+					\item Or rapidly scan the sky looking for a blurry spot
+				\end{itemize}
+			\item Tightly pack bunch of young, bright blue stars
+			\item Inspired the Subaru logo
+		\end{itemize}
+	\end{columns}
 \end{frame}
 
 

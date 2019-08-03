@@ -1,0 +1,43 @@
+% Definining our base outer theme:
+\useoutertheme{split}
+
+
+% We'll define the footer first. We want it to look something like
+% |      Title         |     Date      |    Author     |   Slide Number   |
+% I'm still a little unclear if the leavevmode and hbox are necessary
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.416667\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+	\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+	\insertshortdate
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+	\insertshortauthor
+  \end{beamercolorbox}%
+   \begin{beamercolorbox}[wd=0.083333\paperwidth,ht=2.25ex,dp=1ex,right]{slide in head/foot}%
+	\insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  %\vskip0pt%
+}
+
+% We want no header for this theme, but split usually has one, so we get rid of it
+% by setting it to blank
+\setbeamertemplate{headline}{}
+
+% We'll define the frame title using tikz so that we can get some nice decorative lines as well as positioning our logo. The boundingbox command is there just to double check that anything we draw doesn't go outside the region we'd like our title to live.
+\setbeamertemplate{frametitle}
+{
+  \begin{beamercolorbox}[wd=\paperwidth, ht=1.2cm]{frametitle}
+	\begin{tikzpicture}
+	  \useasboundingbox[fill=bg!95](0,0) rectangle (\the\paperwidth, 1.2);
+	  \fill[Blue] (0,0.05) rectangle (\the\paperwidth, 0.15);
+	  \fill[Orange] (0,0) rectangle (0.8*\the\paperwidth, 0.05);
+	  \node[anchor=north west, fg, font=\LARGE] at (0.2,1.0){\insertframetitle};
+	  \node[inner sep=0pt] at (0.95*\the\paperwidth,0.7) {\includegraphics[width=1cm]{wu_logo.pdf}};
+	\end{tikzpicture}
+  \end{beamercolorbox}
+}

@@ -1,0 +1,80 @@
+% Custom color theme for Beamer
+% Created for use in my Astronomy classes
+
+% Defining all custom colors below as taken from this palette:
+% http://paletton.com/#uid=30v050ks+w0ckFAldx3vyo-ykg9
+
+\definecolor{LBlue}{RGB}{58,139,162}
+\definecolor{Blue}{RGB}{20,128,159}
+\definecolor{Blue2}{RGB}{6,96,122}
+\definecolor{Blue3}{RGB}{2,63,80}
+
+\definecolor{Background}{RGB}{100,40,40}
+\definecolor{Foreground}{RGB}{180,180,180}
+
+\definecolor{Orange}{RGB}{255,131,24}
+\definecolor{LOrange}{RGB}{255,202,157}
+\definecolor{DOrange}{RGB}{196,92,3}
+
+\definecolor{Teal}{RGB}{2,123,106}
+\definecolor{Red}{RGB}{184,3,35}
+
+
+% Applying colors
+\setbeamercolor{frametitle}{fg=LOrange, bg=Background}
+\setbeamercolor{title}{fg=Foreground}
+
+\setbeamercolor{section in toc}{fg=Foreground}
+\setbeamercolor{section in toc shaded}{fg=Foreground}
+
+\setbeamercolor{item}{fg=Orange, bg=Background}
+\setbeamercolor{subitem}{fg=Foreground}
+\setbeamercolor{subsubitem}{fg=Foreground}
+\setbeamercolor{description item}{fg=LOrange}
+\setbeamercolor{item projected}{fg=black}
+
+\setbeamercolor{background canvas}{bg=Background}
+
+\setbeamercolor{block title}{fg=Foreground, bg=Blue2!60!black}
+\setbeamercolor{block body}{bg=Blue2}
+\setbeamercolor{block shadow}{bg=Orange}
+\setbeamercolor{block title alerted}{fg=Foreground, bg=Red!60!black}
+\setbeamercolor{block body alerted}{bg=Red}
+\setbeamercolor{block title example}{fg=Foreground, bg=Teal!40!black}
+\setbeamercolor{block body example}{bg=Teal!80!black}
+
+\setbeamercolor{normal text}{fg=Foreground}
+%\setbeamercolor{alerted text}{fg=LOrange}
+\setbeamercolor{alerted text}{fg=LBlue}
+
+\setbeamercolor{author in head/foot}{fg=LOrange, bg=Blue}
+\setbeamercolor{date in head/foot}{fg=LOrange, bg=Blue2}
+\setbeamercolor{title in head/foot}{fg=LOrange, bg=Blue3}
+\setbeamercolor{slide in head/foot}{fg=Orange, bg=Background}
+
+\setbeamercolor{quotation}{fg=Foreground, bg=Background}
+
+
+% Below are color applications to try to extend this color theme to generic beamer styles. This has mixed results in general!
+\setbeamercolor*{palette primary}{fg=Blue, bg=Background}
+\setbeamercolor*{palette secondary}{fg=Orange}
+\setbeamercolor*{palette tertiary}{fg=Blue2}
+\setbeamercolor*{palette quaternary}{fg=LOrange, bg=Blue3}
+\setbeamercolor*{titlelike}{parent=palette primary}
+%\setbeamercolor{frametitle}{bg=Blue3, fg=Foreground}
+%\setbeamercolor{frametitle right}{bg=Background}
+\setbeamercolor*{sidebar}{bg=Blue3}
+\setbeamercolor*{palette sidebar primary}{fg=LOrange, bg=Background}
+\setbeamercolor*{palette sidebar secondary}{fg=Foreground}
+\setbeamercolor*{palette sidebar tertiary}{fg=Blue}
+\setbeamercolor*{palette sidebar quaternary}{fg=Orange, bg=Background}
+\setbeamercolor{separation line}{fg=Orange}
+
+% The below will correct the Warsaw shading for a darker background. Block shading will still be messed up, and thus one should probably consider turing off block shading when using this color scheme.
+\AtBeginDocument{
+	\pgfdeclareverticalshading{beamer@topshade}{\paperwidth}{%
+		color(0pt)=(Background);
+		color(4pt)=(Blue3)    
+	}
+}
+
