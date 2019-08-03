@@ -11,9 +11,48 @@
 \sisetup{per-mode=symbol}
 \usetikzlibrary{calc, patterns, decorations.markings, decorations.pathmorphing, shapes}
 
+\newcommand{\secimg}{SecMoon.png}
+\AtBeginSection[]{
+	{
+	\setbeamertemplate{footline}{}
+	\begin{frame}
+		\begin{tikzpicture}[remember picture, overlay]
+			\fill[Background] (current page.north west) rectangle (current page.south east);
+			\node[opacity=0.4, anchor=south east, inner sep=0pt, outer sep=0pt] at ([xshift=2cm]current page.south east) {\includegraphics[width=18cm]{\secimg}};
+			\fill[Foreground, opacity=0.8] ([yshift=2cm]current page.west) rectangle ([yshift=1cm]current page.east);
+			\node[font=\LARGE, Background, anchor=west] at ([yshift=1.5cm, xshift=1cm]current page.west) {\insertsectionhead};
+			\node[font=\small, Foreground, anchor=south west] at ([yshift=2cm]current page.west) {Upcoming:};
+		\end{tikzpicture}
+	\end{frame}
+	}
+}
+\setbeamertemplate{title page}{%
+  \begin{tikzpicture}[remember picture, overlay]
+	%\fill[red] (current page.north west) rectangle (current page.east);
+	\begin{scope}
+		\clip (current page.north west) rectangle ($(current page.east)-(0,2)$);
+		\node[opacity=0.8, anchor=south east] at ([yshift=-7cm, xshift=2cm]current page.north east) {\includegraphics[width=18cm]{CoverSky.png}};
+
+		\node at (3,0) {\includegraphics[width=4cm]{Cloud.png}};
+		\node at (7,3) {\includegraphics[width=6cm]{Cloud.png}};
+		\node at (6,-1) {\includegraphics[width=3cm]{Cloud.png}};
+		\node at (10,1) {\includegraphics[width=4cm]{Cloud.png}};
+		\node at (0,2) {\includegraphics[width=5cm]{Cloud.png}};
+		\node[anchor=south east] at ([yshift=-7cm, xshift=2cm]current page.north east) {\includegraphics[width=18cm]{CoverSkyForeground.png}};
+	\end{scope}
+	\node[font={\LARGE}, Orange, anchor=south, inner sep=0pt, outer sep=0pt] at ([yshift=-3cm]current page.center) {\inserttitle};
+	%\node[font={\LARGE\scshape}, orange!80, opacity=0.2, anchor=south, inner sep=0pt, outer sep=0pt, yscale=-1, xslant=1.2] at ([yshift=-3cm]current page.center) {\inserttitle};
+	%\node[font=\large, gold] at ([yshift=-22mm]current page.center) {\insertsubtitle};
+	\node[font=\large, Foreground] (name) at ([yshift=-35mm]current page.center) {\insertauthor};
+	\node[gray] at ([yshift=-40mm]current page.center) {\insertinstitute};
+	\node[gray] at ([yshift=-44mm]current page.center) {\insertdate};
+  \end{tikzpicture}
+}
+
 %Preamble
-\title{A Tour and Guide to Salem's Night Skies}
+\title{A Guide to Salem's Night Skies}
 \author{Jed Rembold}
+\institute{Willamette University}
 \date{August 3, 2019}
 
 \begin{document}
@@ -23,6 +62,22 @@
 	\setbeamertemplate{footline}{}
 	\maketitle
 }
+
+\begin{frame}{Squad Goals}
+	\begin{itemize}
+		\item To give you a short list of fun, easy things to look at when you find yourself under a night sky
+		\item To make sure you know how to find said objects in the sky
+			\begin{itemize}
+				\item Don't be afraid to use technology to help you either! There are some great apps out there these days.
+			\end{itemize}
+			
+		\item Everything is visible with the naked eye and looks great with just binoculars
+		\item A small telescope will really make everything pop but is largely unnecessary
+		\item Slides available at \url{https://github.com/jrembold/Presentations} under the SPL Skies of Salem folder for future reference
+
+	\end{itemize}
+	
+\end{frame}
 
 \begin{frame}{Overview}
 	\begin{itemize}
@@ -40,7 +95,7 @@
 			\end{itemize}
 		\item Deep Sky
 			\begin{itemize}
-				\item Pleides
+				\item Pleiades
 				\item Orion Nebula
 				\item Andromeda Galaxy
 				\item Hercules Cluster
@@ -48,6 +103,8 @@
 		\item Perseid Meteor Shower
 	\end{itemize}
 \end{frame}
+
+
 
 \section{The Moon}
 
@@ -128,11 +185,12 @@
 	\end{columns}
 \end{frame}
 
-\section{The Planets}
+\renewcommand{\secimg}{SecPlanets.png}
+\section{Planets}
 
 \begin{frame}{Jupiter}
 	\begin{columns}
-		\column{0.55\textwidth}
+		\column{0.5\textwidth}
 		\begin{center}
 			\begin{tikzpicture}
 				\node<1> {\includegraphics[width=\textwidth]{JupiterPosition.png}};
@@ -140,7 +198,7 @@
 			\end{tikzpicture}
 		\end{center}
 		
-		\column{0.5\textwidth}
+		\column{0.55\textwidth}
 		\begin{itemize}
 			\item Largest of the planets. Will appear as a very large bright star in the sky.
 			\item Look towards the South between 15 and 30 degrees above the horizon.
@@ -197,14 +255,76 @@
 			\item<2-> Mars
 				\begin{itemize}
 					\item Exhibits a reddish tinge
-					\item Lies on the same elciptic, so visible to mostly looking South
+					\item Lies on the same ecliptic, so visible mainly looking South
 					\item With telescope can sometimes make out polar caps
 				\end{itemize}
 		\end{itemize}
 	\end{columns}
 \end{frame}
 
+\renewcommand{\secimg}{SecDeepSky.png}
 \section{Deep Sky}
+
+\begin{frame}{Deep Sky Basics}
+	\begin{itemize}
+		\item I will relate everything to 3 bright, easy, constellations. So you just need to be able to find them.
+			\begin{itemize}
+				\item Cassiopeia
+				\item Orion
+				\item The Big Dipper
+			\end{itemize}
+		\item Peripheral vision is more sensitive to light
+			\begin{itemize}
+				\item Don't stare directly at the dim object you are trying to see!
+			\end{itemize}
+		\item These all can be see in light-polluted areas, but it may be easier to find them the first time from a good dark location.
+			
+			
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{The Pleides: An Open Star Cluster}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{center}
+			\vspace{-8mm}
+			\begin{tikzpicture}
+				\node<1> {\includegraphics[width=\textwidth]{FindingPleides.png}};
+				\node<2> {\includegraphics[width=\textwidth]{Pleides.jpg}};
+			\end{tikzpicture}
+		\end{center}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Located in the constellation Taurus
+				\begin{itemize}
+					\item Can find by following the line of Orion's belt
+					\item Or rapidly scan the sky looking for a blurry spot
+				\end{itemize}
+			\item Tightly pack bunch of young, bright blue stars
+			\item Inspired the Subaru logo
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+
+\begin{frame}{Orion Nebula}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Brightest nebula to look at in the Northern hemisphere
+			\item Resides in the ``dagger'' on Orion's belt
+			\item Orion currently rises just before the Sun, but will be up earlier and earlier as we move toward winter.
+		\end{itemize}
+		\column{0.5\textwidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\node<1> {\includegraphics[width=\textwidth]{orion_constellation.jpg}};
+				\node<2> {\includegraphics[width=\textwidth]{OrionNebula_Binocs.jpg}};
+			\end{tikzpicture}
+		\end{center}
+	\end{columns}
+\end{frame}
 
 \begin{frame}{Andromeda Galaxy}
 	\begin{columns}
@@ -262,46 +382,77 @@
 	\end{center}
 \end{frame}
 
-\begin{frame}{Orion Nebula}
+\begin{frame}{Hercules Cluster: A Globular Cluster}
 	\begin{columns}
-		\column{0.5\textwidth}
+		\column{0.45\textwidth}
 		\begin{itemize}
-			\item Brightest nebula to look at in the Northern hemisphere
-			\item Resides in the ``dagger'' on Orion's belt
-			\item Orion currently rises just before the Sun, but will be up earlier and earlier as we move toward winter.
+			\item Located in constellation Hercules
+				\begin{itemize}
+					\item Rests between the bright stars Vega and Arcturus
+					\item The handle of the big dipper points towards Arcturus
+				\end{itemize}
+			\item Incredible dense regions of old, yellow/golden stars
+			\item Generally live above or below the disk of the Milky Way
 		\end{itemize}
-		\column{0.5\textwidth}
+		
+		\column{0.55\textwidth}
 		\begin{center}
-			\begin{tikzpicture}
-				\node<1> {\includegraphics[width=\textwidth]{orion_constellation.jpg}};
-				\node<2> {\includegraphics[width=\textwidth]{OrionNebula_Binocs.jpg}};
+			\begin{tikzpicture}[
+				star/.style={circle, minimum size=1mm, inner sep=0pt,},
+				scale=0.78
+				]
+				\node<1-5> {\includegraphics[width=\textwidth]{FindingHercules.png}};
+				\node[star] (bd1) at (3.34,-2.65) {};
+				\node[star] (bd2) at ($(bd1)+(245:.6)$) {};
+				\node[star] (bd3) at ($(bd2)+(167:.9)$) {};
+				\node[star] (bd4) at ($(bd3)+(92:.5)$) {};
+				\node[star] (bd5) at ($(bd4)+(142:.6)$) {};
+				\node[star] (bd6) at ($(bd5)+(138:.48)$) {};
+				\node[star] (bd7) at ($(bd6)+(178:.72)$) {};
+
+				\node[star] (arc) at (-2.52,-2.48) {};
+				\node[star] (veg) at (-.36,3.55) {};
+
+				\node[star] (h1) at (-1.1,1.9) {};
+				\node[star] (h2) at ($(h1)+(280:.7)$) {};
+				\node[star] (h3) at ($(h2)+(180:.8)$) {};
+				\node[star] (h4) at ($(h3)+(90:.45)$) {};
+
+				\draw<2-5>[red, thick] (bd1)--(bd2)--(bd3)--(bd4)--(bd1) (bd4)--(bd5)--(bd6)--(bd7);
+				\draw<3-5>[cyan, thick, dashed] (arc) -- (veg);
+				\draw<4-5>[orange, thick] (h1)--(h2)-- coordinate[pos=.3](clu)(h3)--(h4)--(h1);
+				\draw<5-5>[green, thick, latex-] (clu) -- +(-40:.5);
+				\node<6> {\includegraphics[width=.9\textwidth]{HerculesCluster.png}};
 			\end{tikzpicture}
 		\end{center}
 	\end{columns}
 \end{frame}
 
-\begin{frame}{The Pleides: An Open Star Cluster}
+\begin{frame}{Perseid Meteor Shower}
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{center}
-			\vspace{-8mm}
-			\begin{tikzpicture}
-				\node<1> {\includegraphics[width=\textwidth]{FindingPleides.png}};
-				\node<2> {\includegraphics[width=\textwidth]{Pleides.jpg}};
-			\end{tikzpicture}
+			\vspace{-5mm}
+			\includegraphics[width=1.1\textwidth]{Perseids.png}
 		\end{center}
+		
 		\column{0.5\textwidth}
 		\begin{itemize}
-			\item Located in the constellation Taurus
+			\item Caused by debris from Comet Swift-Tuttle burning up in the atmosphere
+			\item \alert{Radiant} will appear to be in the constellation Perseus, just below Cassiopeia
 				\begin{itemize}
-					\item Can find by following the line of Orion's belt
-					\item Or rapidly scan the sky looking for a blurry spot
+					\item In truth though, just look up. You'll see them everywhere!
 				\end{itemize}
-			\item Tightly pack bunch of young, bright blue stars
-			\item Inspired the Subaru logo
+				
+			\item Peak mornings are August 11,12,13
+				\begin{itemize}
+					\item But watch starting now! A large moon will obscure viewing on those days
+				\end{itemize}
 		\end{itemize}
 	\end{columns}
 \end{frame}
+
+
 
 
 
